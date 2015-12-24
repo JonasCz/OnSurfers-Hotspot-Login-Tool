@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent">
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="Login to WiFi"
+			android:layout_width="match_parent"
+			android:id="@+id/activity.main.loginButton"
+			android:textAlignment="center"
+			android:layout_margin="25dp"/>
+
+		<TextView
+			android:text="Click the button above to login."
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/activity.main.statusText"
+			android:layout_below="@id/activity.main.loginButton"
+			android:textAlignment="center"
+			android:gravity="center_horizontal"
+			android:layout_marginLeft="25dp"
+			android:layout_marginRight="25dp"
+			android:textSize="20sp"/>
+
+		<TextView
+			android:text="No help available."
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/activity.main.helpText"
+			android:layout_below="@id/activity.main.statusText"
+			android:textAlignment="center"
+			android:gravity="center_horizontal"
+			android:layout_margin="25dp"
+			android:visibility="gone"/>
+
+	</RelativeLayout>
+
+</ScrollView>
+
