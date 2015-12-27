@@ -3,13 +3,18 @@ package jonas.oshlt;
 import android.app.*;
 import android.os.*;
 import android.widget.*;
-import android.view.View.*;
 import android.view.*;
-import com.squareup.okhttp.*;
-import java.io.*;
-import org.jsoup.nodes.*;
-import org.jsoup.*;
-import java.util.concurrent.*;
+
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.HttpUrl;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.Response;
+import com.squareup.okhttp.FormEncodingBuilder;
+
+import org.jsoup.nodes.Element;
+import org.jsoup.nodes.Document;
+import org.jsoup.Jsoup;
+
 
 public class MainActivity extends Activity {
 	Button buttonLogin;
@@ -133,7 +138,6 @@ public class MainActivity extends Activity {
 				if (responseString.contains("Usted ya ha descargado gratuitamente")) {
 					return "10 minutes already used this hour, try again later";
 				} else {
-					//first request gives us a form with some data, which we have to send back to get our key
 					publishProgress("Verifying connection...", "5", "5");
 					request = new Request.Builder()
 						.url(exampleComUrl)
@@ -141,15 +145,14 @@ public class MainActivity extends Activity {
 					response = okClient.newCall(request).execute();
 
 					if (response.request().httpUrl().toString().equals(exampleComUrl) && response.isSuccessful()) {
-						publishProgress("Successfully Connected");
 						return "Connected";
 					} else {
-						return "Other Error";
+						return "Error, Response  url: " + response.request().httpUrl().toString() + " does not equal expected url: " + exampleComUrl;
 					}
 					
 				}
 				
-			} catch (IOException e) {
+			} catch (Exception e) {
 				return "Error: " + e.getMessage();
 			}
 		}
