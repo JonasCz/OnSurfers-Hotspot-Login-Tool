@@ -28,17 +28,6 @@
 			android:layout_marginRight="25dp"
 			android:textSize="20sp"/>
 
-		<TextView
-			android:text="No help available."
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/activity.main.helpText"
-			android:layout_below="@id/activity.main.statusText"
-			android:textAlignment="center"
-			android:gravity="center_horizontal"
-			android:layout_margin="25dp"
-			android:visibility="gone"/>
-
 	</RelativeLayout>
 
 </ScrollView>
