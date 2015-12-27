@@ -22,6 +22,7 @@ public class MainActivity extends Activity {
 
 	final OkHttpClient okClient = new OkHttpClient();
 
+	final String exampleComUrl = "http://example.com/";
 	final String hotspotTrialUrl = "http://wifi.onsurfers.com/wifilogin/trialGen.php";
 	final String hotspotpostUrl = "http://wifi.onsurfers.com/wifilogin/hotspotpost.php";
 
@@ -66,7 +67,6 @@ public class MainActivity extends Activity {
 		@Override
 		protected String doInBackground(Void[] p1) {
 			try {
-				final String exampleComUrl = "http://example.com";
 				String dataParameter;
 				String macAdress;
 				
