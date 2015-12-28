@@ -79,7 +79,7 @@ public class MainActivity extends Activity {
 				Response response = okClient.newCall(request).execute();
 		
 				if (response.request().httpUrl().toString().equals(exampleComUrl)) {
-					return "Already Connected";
+					return "Already Connected.";
 				}
 				
 				//parse the page and extract form data data
@@ -136,7 +136,7 @@ public class MainActivity extends Activity {
 				
 				String responseString = response.body().string();
 				if (responseString.contains("Usted ya ha descargado gratuitamente")) {
-					return "10 minutes already used this hour, try again later";
+					return "10 minutes already used this hour, try again later.";
 				} else {
 					publishProgress("Verifying connection...", "5", "5");
 					request = new Request.Builder()
@@ -145,15 +145,15 @@ public class MainActivity extends Activity {
 					response = okClient.newCall(request).execute();
 
 					if (response.request().httpUrl().toString().equals(exampleComUrl) && response.isSuccessful()) {
-						return "Connected";
+						return "Connected.";
 					} else {
-						return "Error, Response  url: " + response.request().httpUrl().toString() + " does not equal expected url: " + exampleComUrl;
+						return "Error, Response  url: " + response.request().httpUrl().toString() + " does not equal expected url: " + exampleComUrl + ".";
 					}
 					
 				}
 				
 			} catch (Exception e) {
-				return "Error: " + e.getMessage();
+				return "Error: " + e.getMessage() + ".";
 			}
 		}
 		
